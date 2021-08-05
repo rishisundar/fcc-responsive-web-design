@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereum</title>
+    <link href="./assets/stylesheets/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap" rel="stylesheet">
+</head>
+
+<body onload="getEthPriceAsync()">
+    <script>
+        let currentEthPrice = 0.0, changePercentage = 0.0;
+        const url = "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=USD&include_24hr_change=true";
+
+        async function getEthPriceAsync() {
+            try {
+                let response = await fetch(url);
+                let data = await response.json();
+                let { usd, usd_24h_change} = data.ethereum;
+                currentEthPrice = parseFloat(usd);
+                changePercentage = parseFloat(usd_24h_change);
+                let priceSpan = document.getElementById("eth-price");
+                priceSpan.innerText = `$${currentEthPrice}`;
+                if (changePercentage > 0) {
+                    priceSpan.style.color = "green";
+                } else {
+                    priceSpan.style.color = "red";
+                }
+            } catch (e) {
+                console.error("Something went wrong when fetching ETH price from https://www.coingecko.com/ API", e);
+            }
+        }
+    </script>
+    <div id="main">
+        <div id="title">
+            <img src="./assets/images/eth.png" id="title-logo">
+            <h1 id="title-heading">Ethereum</h1>
+            <p id="title-subheading">Platform for decentralised applications</p>
+        </div>
+        <div id="tribute-info">
+            <div class="nugget-left">
+                <img class="nugget-left-img" src="./assets/images/What_Squared_750px.png">
+                <h2 class="nugget-left-caption">What is Ethereum?</h2>
+                <p class="nugget-left-info">
+                    Ethereum is a technology that's home to digital money, global payments, and
+                    applications. The community has built a booming digital economy, bold new ways for creators to earn
+                    online, and so much more. It's open to everyone, wherever you are in the world – all you need is the
+                    internet.
+                </p>
+            </div>
+            <div class="nugget-right">
+                <img class="nugget-right-img" src="./assets/images/ETH_Squared_750px.png">
+                <h2 class="nugget-right-caption">What's Ether and how can I get it?</h2>
+                <p class="nugget-right-info">Ether, symbolised as ETH is the cryptocurrency using which transactions are
+                    carried out on the Ethereum blockchain. You can get Ether by either mining it or you can buy ETH from
+                    exchanges or wallets directly.</p>
+            </div>
+            <div class="nugget-left">
+                <img class="nugget-left-img" src="./assets/images/Value_Squared_750px.png">
+                <h2 class="nugget-left-caption">How much does an ETH cost?</h2>
+                <p class="nugget-left-info">
+                    Note: The value of Eth varies across different Exchanges. The current value
+                    of Ether is <span id="eth-price">$2680.53</span>
+                </p>
+            </div>
+            <div class="nugget-right-special">
+                <h2 class="nugget-right-special-caption">Who's Vitalik Buterin and what did he do?</h2>
+                <p class="nugget-right-special-info">
+                    Vitalik Buterin, a Russian-Canadian programmer is one of the
+                    co-founders of Ethereum. He proposed Ethereum in 2013. The crowdfunded development of Ethereum started in
+                    2014. On July 30 2015, the Ethereum network went live.
+                </p>
+                <div id="img-div">
+                    <img src="./assets/images/Vitalik_Buterin_750px.jpg" id="image" alt="Picture of Vitalik Buterin, co-founder of Ethereum">
+                    <div id="img-caption">
+                        <strong>Picture of <a href="https://en.wikipedia.org/wiki/Vitalik_Buterin" target="_blank">Vitalik Buterin</a>, co-founder of Ethereum in 2015</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="more-info">
+            <a id="tribute-link" href="https://ethereum.org/" target="_blank">For more info on Ethereum, click here</a>
+        </div>
+        <div id="footer">
+            <div id="author-info">
+                Made by <a href="https://github.com/rishisundar" target="_blank">Rishi Sundar</a>.
+            </div>
+            <div id="copyright-info">
+                    Copyright of the images lies with respective owners only.<br>
+                    Made for educational purposes only.
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
