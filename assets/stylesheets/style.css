@@ -166,6 +166,8 @@
     
     #img-div {
         grid-area: 4 / 1 / 8 / 5;
+        display: flex;
+        flex-direction: column;
     }
     
     #img-caption {
