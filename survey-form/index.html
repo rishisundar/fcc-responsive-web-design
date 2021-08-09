@@ -10,45 +10,51 @@
 
 <body>
     <div id="main">
-        <h1 id="title">Title</h1>
-        <p id="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, veniam nobis. Tempora,
-            repellat
-            asperiores provident iusto rerum, dolor expedita praesentium officiis sed aut, consequatur et debitis
-            voluptates
-            odit in enim!</p>
+        <link rel="stylesheet" href="./assets/stylesheets/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+        <h1 id="title">Feed us back!</h1>
+        <p id="description">You are our influencer and your word makes us better</p>
         <form action="" id="survey-form">
-            <label for="name" id="name-label">Name</label>
+            <label for="name" id="name-label" class="labels">Name</label>
             <input type="text" id="name" name="name" placeholder="John Doe" required>
-            <label for="email" id="email-label">Email</label>
+            <label for="email" id="email-label" class="labels">Email</label>
             <input type="email" name="email" id="email" placeholder="john.doe@mail.com" required>
-            <label for="number" id="number-label">Age</label>
-            <input type="number" name="number" id="number" min="0" max="100" placeholder="18">
-            <label for="mobile">Phone</label>
+            <label for="age" id="age-label" class="labels">Age</label>
+            <input type="number" name="age" id="age" min="16" max="100" placeholder="18">
+            <label for="mobile" id="mobile-label" class="labels">Phone</label>
             <input type="tel" name="mobile" id="mobile" minlength="10" maxlength="10" min="1000000000"
-                placeholder="1234567890">
-            <label for="dropdown">Sample dropdown</label>
-            <select name="dropdown" id="dropdown">
-                <option value="val1">Value 1</option>
-                <option value="val2">Value 2</option>
-                <option value="val3">Value 3</option>
+                placeholder="7234567890">
+            <label for="fav-food" id="fav-food-label" class="labels">What was your favourite?</label>
+            <select name="fav-food" id="fav-food">
+                <option value="None" selected>None</option>
+                <option value="CS-Sandwich">Corn and Spinach Sandwich</option>
+                <option value="MB-SPL-Nachos">M&B Special Nachos</option>
+                <option value="Pasta-Pesto">Pesto Pasta</option>
             </select>
-            <label for="radio-buttons">Radio Buttons</label>
-            <input type="radio" name="radio-buttons" value="opt-1" id="opt-1">
-            <label for="opt-1">Option 1</label>
-            <input type="radio" name="radio-buttons" value="opt-2" id="opt-2">
-            <label for="opt-2">Option 2</label>
-            <input type="radio" name="radio-buttons" value="opt-3" id="opt-3">
-            <label for="opt-3">Option 3</label>
-            <label for="check-boxes">Boxes</label>
-            <input type="checkbox" name="check-boxes" value="box-1" id="box-1">
-            <label for="box-1">Option 1</label>
-            <input type="checkbox" name="check-boxes" value="box-2" id="box-2">
-            <label for="box-2">Option 2</label>
-            <input type="checkbox" name="check-boxes" value="box-3" id="box-3">
-            <label for="box-3">Option 3</label>
-            <label for="feedback">Feedback</label>
-            <textarea name="feedback" id="feedback" cols="30" rows="10" minlength="10" maxlength="150"></textarea>
-            <input type="submit" value="submit" id="submit" onsubmit="console.log('done');">
+            <label for="user-rating" id="user-rating-label" class="labels">Rate your experience</label>
+            <div id="star-rating">
+                <input type="radio" name="user-rating" value="1" id="star-1">
+                <label for="star-1">1 Star</label>
+                <input type="radio" name="user-rating" value="2" id="star-2">
+                <label for="star-2">2 Star</label>
+                <input type="radio" name="user-rating" value="3" id="star-3">
+                <label for="star-3">3 Star</label>
+                <input type="radio" name="user-rating" value="4" id="star-4">
+                <label for="star-4">4 Star</label>
+                <input type="radio" name="user-rating" value="5" id="star-5">
+                <label for="star-5">5 Star</label>
+            </div>
+            <label for="what-you-liked" id="what-you-liked-label" class="labels">What were you impressed with?</label>
+            <div id="what-you-liked">
+                <input type="checkbox" name="what-you-liked" value="Food" id="what-you-liked-1">
+                <label for="what-you-liked-1">Food</label>
+                <input type="checkbox" name="what-you-liked" value="Dining-Experience" id="what-you-liked-2">
+                <label for="what-you-liked-2">Dining Experience</label>
+                <input type="checkbox" name="what-you-liked" value="Ambience" id="what-you-liked-3">
+                <label for="what-you-liked-3">Ambience</label>
+            </div>
+            <textarea name="feedback" id="feedback" rows="1" minlength="15" maxlength="150" placeholder="Tell us how we can improve"></textarea>
+            <input type="submit" value="submit" id="submit">
         </form>
     </div>
 
