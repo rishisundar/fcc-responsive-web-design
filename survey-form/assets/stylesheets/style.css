@@ -1,0 +1,131 @@
+:root {
+    --groovy-orange: #F08540;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#main {
+    display: grid;
+    padding: 5%;
+}
+
+#title {
+    justify-self: center;
+    font-family: Open Sans;
+    font-style: italic;
+    font-weight: 600;
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.labels {
+    font-family: Open Sans;
+}
+
+#description {
+    font-family: Open Sans;
+    justify-self: center;
+    grid-area: 2 / 1 / 4 / 3;
+}
+
+#survey-form {
+    display: grid;
+    grid-area: 4 / 1 / 5 / 3;
+}
+
+#submit {
+    background-color: var(--groovy-orange, #F08540);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5%;
+}
+
+#feedback {
+    resize: vertical;
+}
+
+#footer {
+    grid-area: 5 / 1 / 6 / 3;
+}
+
+@media (min-width: 280px) {
+
+    #name-label {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    #name {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+
+    #email-label {
+        grid-area: 3 / 1 / 4 / 3;
+    }
+
+    #email {
+        grid-area: 4 / 1 / 5 / 3;
+    }
+
+    #age-label {
+        grid-area: 5 / 1 / 6 / 3;
+    }
+
+    #age {
+        grid-area: 6 / 1 / 7 / 3;
+    }
+
+    #mobile-label {
+        grid-area: 7 / 1 / 8 / 3;
+    }
+
+    #mobile {
+        grid-area: 8 / 1 / 9 / 3;
+    }
+
+    #fav-food-label {
+        grid-area: 9 / 1 / 10 / 3;
+    }
+
+    #fav-food {
+        grid-area: 10 / 1 / 11 / 3;
+    }
+
+    #user-rating-label {
+        grid-area: 11 / 1 / 12 / 3;
+    }
+
+    #star-rating {
+        grid-gap: 12 / 1 / 13 / 3;
+    }
+
+    #what-you-liked-label {
+        grid-area: 13 / 1 / 14 / 3;
+    }
+
+    #what-you-liked {
+        display: grid;
+        grid-area: 14 / 1 / 17 / 3;
+    }
+
+    #what-you-liked-1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    #what-you-liked-2 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    #what-you-liked-3 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    #feedback {
+        grid-area: 17 / 1 / 18 / 3;
+    }
+
+    #submit {
+        grid-area: 18 / 1 / 19 / 3;
+    }
+}
