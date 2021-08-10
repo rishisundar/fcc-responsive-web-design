@@ -34,27 +34,27 @@
             <label for="user-rating" id="user-rating-label" class="labels">Rate your experience</label>
             <div id="star-rating">
                 <input type="radio" name="user-rating" value="1" id="star-1">
-                <label for="star-1">1 Star</label>
+                <label for="star-1">★</label>
                 <input type="radio" name="user-rating" value="2" id="star-2">
-                <label for="star-2">2 Star</label>
+                <label for="star-2">★</label>
                 <input type="radio" name="user-rating" value="3" id="star-3">
-                <label for="star-3">3 Star</label>
+                <label for="star-3">★</label>
                 <input type="radio" name="user-rating" value="4" id="star-4">
-                <label for="star-4">4 Star</label>
+                <label for="star-4">★</label>
                 <input type="radio" name="user-rating" value="5" id="star-5">
-                <label for="star-5">5 Star</label>
+                <label for="star-5">★</label>
             </div>
-            <label for="what-you-liked" id="what-you-liked-label" class="labels">What were you impressed with?</label>
-            <div id="what-you-liked">
-                <div id="wyl-1">
+            <label for="what-you-liked-boxes" id="what-you-liked-label" class="labels">What were you impressed with?</label>
+            <div id="what-you-liked-boxes">
+                <div class="wyl">
                     <input type="checkbox" name="what-you-liked" value="Food" id="what-you-liked-1">
                     <label for="what-you-liked-1">Food</label>
                 </div>
-                <div id="wyl-2">
+                <div class="wyl">
                     <input type="checkbox" name="what-you-liked" value="Dining-Experience" id="what-you-liked-2">
                     <label for="what-you-liked-2">Dining Experience</label>
                 </div>
-                <div id="wyl-3">
+                <div class="wyl">
                     <input type="checkbox" name="what-you-liked" value="Ambience" id="what-you-liked-3">
                     <label for="what-you-liked-3">Ambience</label>
                 </div>
@@ -63,7 +63,16 @@
             <input type="submit" value="submit" id="submit">
         </form>
     </div>
+    <script>
+        const feedbackTextArea = document.getElementById("feedback");
+        feedbackTextArea.setAttribute("style", `height:${feedbackTextArea.scrollHeight}px; overflow-y:hidden;`);
+        feedbackTextArea.addEventListener("input", autoResize, false);
 
+        function autoResize() {
+            feedbackTextArea.style.height = "auto";
+            feedbackTextArea.style.height = `${feedbackTextArea.scrollHeight}px`;
+        }
+    </script>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 

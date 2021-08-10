@@ -1,5 +1,7 @@
 :root {
     --groovy-orange: #F08540;
+    --golden-yellow: #ffc700;
+    --deselected-star: #ccc;
 }
 
 * {
@@ -35,15 +37,38 @@
     grid-area: 4 / 1 / 5 / 3;
 }
 
+
+#star-rating:not(:checked) > input {
+    /* Moving and hiding the radio buttons */
+    position: absolute;
+    top: -99999px;
+}
+
+#star-rating {
+    border: 2.5px solid green;
+    display: flex;
+    justify-content: space-between;
+}
+
+#star-rating > label {
+    color: var(--deselected-star, #ccc);
+    font-size: xx-large;
+    border: 2.5px solid green;
+    
+}
+
 #submit {
     background-color: var(--groovy-orange, #F08540);
     padding: 5px;
-    margin: 5px;
+    margin-top: 10px;
     border-radius: 5%;
 }
 
 #feedback {
     resize: vertical;
+    padding: 5px;
+    margin-top: 10px;
+    font-family: Open Sans;
 }
 
 #footer {
@@ -104,21 +129,10 @@
         grid-area: 13 / 1 / 14 / 3;
     }
 
-    #what-you-liked {
-        display: grid;
+    #what-you-liked-boxes {
+        display: flex;
+        justify-content: space-between;
         grid-area: 14 / 1 / 17 / 3;
-    }
-
-    #what-you-liked-1 {
-        grid-area: 1 / 1 / 2 / 2;
-    }
-
-    #what-you-liked-2 {
-        grid-area: 2 / 1 / 3 / 2;
-    }
-
-    #what-you-liked-3 {
-        grid-area: 3 / 1 / 4 / 2;
     }
 
     #feedback {
