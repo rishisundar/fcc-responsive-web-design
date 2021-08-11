@@ -33,40 +33,47 @@
             </select>
             <label for="user-rating" id="user-rating-label" class="labels">Rate your experience</label>
             <div id="star-rating">
-                <input type="radio" name="user-rating" value="1" id="star-1">
-                <label for="star-1">★</label>
-                <input type="radio" name="user-rating" value="2" id="star-2">
-                <label for="star-2">★</label>
-                <input type="radio" name="user-rating" value="3" id="star-3">
-                <label for="star-3">★</label>
-                <input type="radio" name="user-rating" value="4" id="star-4">
-                <label for="star-4">★</label>
                 <input type="radio" name="user-rating" value="5" id="star-5">
                 <label for="star-5">★</label>
+                <input type="radio" name="user-rating" value="4" id="star-4">
+                <label for="star-4">★</label>
+                <input type="radio" name="user-rating" value="3" id="star-3">
+                <label for="star-3">★</label>
+                <input type="radio" name="user-rating" value="2" id="star-2">
+                <label for="star-2">★</label>
+                <input type="radio" name="user-rating" value="1" id="star-1">
+                <label for="star-1">★</label>
             </div>
             <label for="what-you-liked-boxes" id="what-you-liked-label" class="labels">What were you impressed with?</label>
             <div id="what-you-liked-boxes">
                 <div class="wyl">
-                    <input type="checkbox" name="what-you-liked" value="Food" id="what-you-liked-1">
-                    <label for="what-you-liked-1">Food</label>
+                    <input type="checkbox" name="what-you-liked" value="Food" class="what-you-liked-box" id="what-you-liked-1">
+                    <label for="what-you-liked-1" class="img-box">😋</label>
                 </div>
                 <div class="wyl">
-                    <input type="checkbox" name="what-you-liked" value="Dining-Experience" id="what-you-liked-2">
-                    <label for="what-you-liked-2">Dining Experience</label>
+                    <input type="checkbox" name="what-you-liked" value="VFM" class="what-you-liked-box" id="what-you-liked-2">
+                    <label for="what-you-liked-2" class="img-box">💰</label>
                 </div>
                 <div class="wyl">
-                    <input type="checkbox" name="what-you-liked" value="Ambience" id="what-you-liked-3">
-                    <label for="what-you-liked-3">Ambience</label>
+                    <input type="checkbox" name="what-you-liked" value="Ambience" class="what-you-liked-box" id="what-you-liked-3">
+                    <label for="what-you-liked-3" class="img-box">🏨</label>
                 </div>
             </div>
             <textarea name="feedback" id="feedback" rows="1" minlength="15" maxlength="150" placeholder="Tell us how we can improve"></textarea>
-            <input type="submit" value="submit" id="submit">
+            <input type="submit" value="Submit" id="submit">
         </form>
     </div>
     <script>
         const feedbackTextArea = document.getElementById("feedback");
         feedbackTextArea.setAttribute("style", `height:${feedbackTextArea.scrollHeight}px; overflow-y:hidden;`);
         feedbackTextArea.addEventListener("input", autoResize, false);
+
+        const surveyForm = document.getElementById("survey-form");
+        surveyForm.addEventListener("submit", (e) => {
+            let formData = new FormData(e.target);
+            console.log(Object.fromEntries(formData.entries()));
+            e.preventDefault();
+        });
 
         function autoResize() {
             feedbackTextArea.style.height = "auto";

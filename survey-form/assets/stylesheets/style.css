@@ -1,6 +1,7 @@
 :root {
     --groovy-orange: #F08540;
     --golden-yellow: #ffc700;
+    --golden-hover: #deb217;
     --deselected-star: #ccc;
 }
 
@@ -12,6 +13,12 @@
 #main {
     display: grid;
     padding: 5%;
+}
+
+input, select {
+    padding: 5px;
+    border-radius: 5px;
+    border-color: #eee;
 }
 
 #title {
@@ -37,31 +44,57 @@
     grid-area: 4 / 1 / 5 / 3;
 }
 
-
+/* Moving and hiding the radio buttons */
 #star-rating:not(:checked) > input {
-    /* Moving and hiding the radio buttons */
     position: absolute;
     top: -99999px;
 }
 
-#star-rating {
-    border: 2.5px solid green;
+#what-you-liked-boxes {
     display: flex;
     justify-content: space-between;
+}
+
+#star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    line-height: 1.5em;
+    justify-content: space-between;
+}
+
+/* Moving and hiding the check boxes*/
+.what-you-liked-box {
+    position: absolute;
+    top: -99999px;
+}
+
+.img-box {
+    filter: grayscale(100%);
+    cursor: pointer;
+    font-size: xx-large;
+}
+
+.what-you-liked-box:checked + .img-box {
+    filter: grayscale(0);
 }
 
 #star-rating > label {
     color: var(--deselected-star, #ccc);
     font-size: xx-large;
-    border: 2.5px solid green;
-    
+}
+
+#star-rating > input:checked ~ label {
+    color: var(--golden-yellow, #ffc700);
+}
+
+#star-rating > input:hover ~ label{
+    color: var(--golden-hover, #deb217);
 }
 
 #submit {
-    background-color: var(--groovy-orange, #F08540);
-    padding: 5px;
-    margin-top: 10px;
-    border-radius: 5%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
 }
 
 #feedback {
@@ -93,11 +126,11 @@
         grid-area: 4 / 1 / 5 / 3;
     }
 
-    #age-label {
+    #number-label {
         grid-area: 5 / 1 / 6 / 3;
     }
 
-    #age {
+    #number {
         grid-area: 6 / 1 / 7 / 3;
     }
 
@@ -113,7 +146,7 @@
         grid-area: 9 / 1 / 10 / 3;
     }
 
-    #fav-food {
+    #dropdown {
         grid-area: 10 / 1 / 11 / 3;
     }
 
