@@ -9,58 +9,77 @@
 </head>
 
 <body>
+    <link rel="stylesheet" href="./assets/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
     <div id="main">
-        <link rel="stylesheet" href="./assets/stylesheets/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
         <h1 id="title">Feed us back!</h1>
         <p id="description">You are our influencer and your word makes us better</p>
         <form action="" id="survey-form">
-            <label for="name" id="name-label" class="labels">Name</label>
-            <input type="text" id="name" name="name" placeholder="John Doe" required>
-            <label for="email" id="email-label" class="labels">Email</label>
-            <input type="email" name="email" id="email" placeholder="john.doe@mail.com" required>
-            <label for="age" id="number-label" class="labels">Age</label>
-            <input type="number" name="age" id="number" min="16" max="100" placeholder="18">
-            <label for="mobile" id="mobile-label" class="labels">Phone</label>
-            <input type="tel" name="mobile" id="mobile" minlength="10" maxlength="10" min="1000000000"
-                placeholder="7234567890">
-            <label for="fav-food" id="fav-food-label" class="labels">What was your favourite?</label>
-            <select name="fav-food" id="dropdown">
-                <option value="None" selected>None</option>
-                <option value="CS-Sandwich">Corn and Spinach Sandwich</option>
-                <option value="MB-SPL-Nachos">M&B Special Nachos</option>
-                <option value="Pasta-Pesto">Pesto Pasta</option>
-            </select>
-            <label for="user-rating" id="user-rating-label" class="labels">Rate your experience</label>
-            <div id="star-rating">
-                <input type="radio" name="user-rating" value="5" id="star-5">
-                <label for="star-5">★</label>
-                <input type="radio" name="user-rating" value="4" id="star-4">
-                <label for="star-4">★</label>
-                <input type="radio" name="user-rating" value="3" id="star-3">
-                <label for="star-3">★</label>
-                <input type="radio" name="user-rating" value="2" id="star-2">
-                <label for="star-2">★</label>
-                <input type="radio" name="user-rating" value="1" id="star-1">
-                <label for="star-1">★</label>
+            <div class="form-field">
+                <label for="name" id="name-label" class="labels">Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
             </div>
-            <label for="what-you-liked-boxes" id="what-you-liked-label" class="labels">What were you impressed with?</label>
-            <div id="what-you-liked-boxes">
-                <div class="wyl">
-                    <input type="checkbox" name="what-you-liked" value="Food" class="what-you-liked-box" id="what-you-liked-1">
-                    <label for="what-you-liked-1" class="img-box">😋</label>
+            <div class="form-field">
+                <label for="email" id="email-label" class="labels">Email</label>
+                <input type="email" name="email" id="email" placeholder="john.doe@mail.com" required>
+            </div>
+            <div class="form-field">
+                <label for="age" id="number-label" class="labels">Age</label>
+                <input type="number" name="age" id="number" min="16" max="100" placeholder="18">
+            </div>
+            <div class="form-field">
+                <label for="mobile" id="mobile-label" class="labels">Phone</label>
+                <input type="tel" name="mobile" id="mobile" minlength="10" maxlength="10" min="1000000000" placeholder="7234567890">
+            </div>
+            <div class="form-field">
+                <label for="fav-food" id="fav-food-label" class="labels">What was your favourite?</label>
+                <select name="fav-food" id="dropdown">
+                    <option value="None" selected>None</option>
+                    <option value="CS-Sandwich">Corn and Spinach Sandwich</option>
+                    <option value="MB-SPL-Nachos">M&B Special Nachos</option>
+                    <option value="Pasta-Pesto">Pesto Pasta</option>
+                </select>
+            </div>
+            <div class="form-ratings">
+                <label for="user-rating" id="user-rating-label" class="labels">Rate your experience</label>
+                <div id="rating-text">
+                    <!-- Text here will be dynamically updated by JS -->
                 </div>
-                <div class="wyl">
-                    <input type="checkbox" name="what-you-liked" value="VFM" class="what-you-liked-box" id="what-you-liked-2">
-                    <label for="what-you-liked-2" class="img-box">💰</label>
+                <div id="star-rating">
+                    <input type="radio" name="user-rating" value="5" id="star-5">
+                    <label for="star-5">★</label>
+                    <input type="radio" name="user-rating" value="4" id="star-4">
+                    <label for="star-4">★</label>
+                    <input type="radio" name="user-rating" value="3" id="star-3">
+                    <label for="star-3">★</label>
+                    <input type="radio" name="user-rating" value="2" id="star-2">
+                    <label for="star-2">★</label>
+                    <input type="radio" name="user-rating" value="1" id="star-1">
+                    <label for="star-1">★</label>
                 </div>
-                <div class="wyl">
-                    <input type="checkbox" name="what-you-liked" value="Ambience" class="what-you-liked-box" id="what-you-liked-3">
-                    <label for="what-you-liked-3" class="img-box">🏨</label>
+            </div>
+            <div class="form-field">
+                <label for="what-you-liked-boxes" id="what-you-liked-label" class="labels">What were you impressed with?</label>
+                <div id="what-you-liked-boxes">
+                    <div class="wyl">
+                        <input type="checkbox" name="what-you-liked" value="Food" class="what-you-liked-box" id="what-you-liked-1">
+                        <label for="what-you-liked-1" class="img-box">😋</label>
+                        <span>Food</span>
+                    </div>
+                    <div class="wyl">
+                        <input type="checkbox" name="what-you-liked" value="VFM" class="what-you-liked-box" id="what-you-liked-2">
+                        <label for="what-you-liked-2" class="img-box">💰</label>
+                        <span>Value for Money</span>
+                    </div>
+                    <div class="wyl">
+                        <input type="checkbox" name="what-you-liked" value="Ambience" class="what-you-liked-box" id="what-you-liked-3">
+                        <label for="what-you-liked-3" class="img-box">🏨</label>
+                        <span>Ambience</span>
+                    </div>
                 </div>
             </div>
             <textarea name="feedback" id="feedback" rows="1" minlength="15" maxlength="150" placeholder="Tell us how we can improve"></textarea>
-            <input type="submit" value="Submit" id="submit">
+            <input type="submit" value="Submit your feedback" id="submit">
         </form>
     </div>
     <script>
