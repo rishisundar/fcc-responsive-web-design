@@ -55,10 +55,8 @@ input, select {
     grid-area: 4 / 1 / 5 / 3;
 }
 
-/* Moving and hiding the radio buttons */
 #star-rating:not(:checked) > input {
-    position: absolute;
-    top: -99999px;
+    display: none;
 }
 
 #what-you-liked-boxes {
@@ -88,10 +86,8 @@ input, select {
     justify-content: space-between;
 }
 
-/* Moving and hiding the check boxes*/
 .what-you-liked-box {
-    position: absolute;
-    top: -99999px;
+    display: none;
 }
 
 .img-box {
