@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="./assets/stylesheets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
     <div id="main">
-        <h1 id="title">Feed us back!</h1>
-        <p id="description">You are our influencer and your word makes us better</p>
+        <div id="header">
+            <h1 id="title">Feed us back!</h1>
+            <p id="description">You are our influencer and your word makes us better</p>
+        </div>
         <form action="" id="survey-form">
             <div class="form-field">
                 <label for="name" id="name-label" class="labels">Name</label>
@@ -81,11 +83,19 @@
             <textarea name="feedback" id="feedback" rows="1" minlength="15" maxlength="150" placeholder="Tell us how we can improve"></textarea>
             <input type="submit" value="Submit your feedback" id="submit">
         </form>
+        <div id="footer">
+            <div id="author-info">
+                Made by <a href="https://github.com/rishisundar" target="_blank">Rishi Sundar</a>.
+            </div>
+        </div>
     </div>
     <script>
         const feedbackTextArea = document.getElementById("feedback");
         feedbackTextArea.setAttribute("style", `height:${feedbackTextArea.scrollHeight}px; overflow-y:hidden;`);
         feedbackTextArea.addEventListener("input", autoResize, false);
+        const ratings = document.getElementById("star-rating");
+        const ratingText = document.getElementById("rating-text");
+        let previousRating;
 
         const surveyForm = document.getElementById("survey-form");
         surveyForm.addEventListener("submit", (e) => {
@@ -93,6 +103,34 @@
             console.log(Object.fromEntries(formData.entries()));
             e.preventDefault();
         });
+
+        ratings.onclick = function (e) {
+            let selectedRating = parseInt(e.target.value);
+            if(selectedRating !== previousRating) {
+                switch (selectedRating) {
+                    case 1:
+                        previousRating = 1;
+                        ratingText.innerText = "Very Bad";
+                        break;
+                    case 2:
+                        previousRating = 2;
+                        ratingText.innerText = "Bad";
+                        break;
+                    case 3:
+                        previousRating = 3;
+                        ratingText.innerText = "Average";
+                        break
+                    case 4:
+                        previousRating = 4;
+                        ratingText.innerText = "Good";
+                        break
+                    case 5:
+                        previousRating = 5;
+                        ratingText.innerText = "Loved It!";
+                        break
+                }
+            }
+        }
 
         function autoResize() {
             feedbackTextArea.style.height = "auto";
