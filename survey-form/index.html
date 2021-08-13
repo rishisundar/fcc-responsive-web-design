@@ -16,24 +16,15 @@
             <h1 id="title">Feed us back!</h1>
             <p id="description">You are our influencer and your word makes us better</p>
         </div>
-        <form action="" id="survey-form">
-            <div class="form-field">
+        <form id="survey-form">
                 <label for="name" id="name-label" class="labels">Name</label>
                 <input type="text" id="name" name="name" placeholder="John Doe" required>
-            </div>
-            <div class="form-field">
                 <label for="email" id="email-label" class="labels">Email</label>
                 <input type="email" name="email" id="email" placeholder="john.doe@mail.com" required>
-            </div>
-            <div class="form-field">
                 <label for="age" id="number-label" class="labels">Age</label>
                 <input type="number" name="age" id="number" min="16" max="100" placeholder="18">
-            </div>
-            <div class="form-field">
                 <label for="mobile" id="mobile-label" class="labels">Phone</label>
                 <input type="tel" name="mobile" id="mobile" minlength="10" maxlength="10" min="1000000000" placeholder="7234567890">
-            </div>
-            <div class="form-field">
                 <label for="fav-food" id="fav-food-label" class="labels">What was your favourite?</label>
                 <select name="fav-food" id="dropdown">
                     <option value="None" selected>None</option>
@@ -41,8 +32,6 @@
                     <option value="MB-SPL-Nachos">M&B Special Nachos</option>
                     <option value="Pasta-Pesto">Pesto Pasta</option>
                 </select>
-            </div>
-            <div class="form-ratings">
                 <label for="user-rating" id="user-rating-label" class="labels">Rate your experience</label>
                 <div id="rating-text">
                     <!-- Text here will be dynamically updated by JS -->
@@ -59,8 +48,6 @@
                     <input type="radio" name="user-rating" value="1" id="star-1">
                     <label for="star-1">★</label>
                 </div>
-            </div>
-            <div class="form-field">
                 <label for="what-you-liked-boxes" id="what-you-liked-label" class="labels">What were you impressed with?</label>
                 <div id="what-you-liked-boxes">
                     <div class="wyl">
@@ -79,9 +66,8 @@
                         <span>Ambience</span>
                     </div>
                 </div>
-            </div>
-            <textarea name="feedback" id="feedback" rows="1" minlength="15" maxlength="150" placeholder="Tell us how we can improve"></textarea>
-            <input type="submit" value="Submit your feedback" id="submit">
+                <textarea name="feedback" id="feedback" rows="1" minlength="15" maxlength="150" placeholder="Tell us how we can improve"></textarea>
+                <input type="submit" value="Submit your feedback" id="submit">
         </form>
         <div id="footer">
             <div id="author-info">
