@@ -6,34 +6,30 @@
 }
 
 body {
-    position: absolute;
     height: 100vh;
 }
 
 .logo {
     font-size: xx-large;
     padding: .75rem;
-    position: absolute;
 }
 
 #navbar {
     position: fixed;
-    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     max-height: 4rem;
     background-color: whitesmoke;
 }
 
 #navbar ul {
-    display: flex;
-    justify-content: flex-end;
     padding-right: 2rem;
 }
 
 #navbar ul li {
     display: inline-block;
     padding: 1rem;
-    padding-left: .5rem;
-    padding-right: .5rem;
 }
 
 #navbar ul li:hover {
@@ -47,7 +43,7 @@ a {
     font-size: x-large;
 }
 
-section {
+section:not(:nth-child(4)) {
     padding-top: 4rem;
 }
 
@@ -56,7 +52,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
@@ -68,10 +64,51 @@ section {
     font-size: x-large;
 }
 
-#projects {
+#project-section {
     height: 100vh;
 }
 
+#project-section__heading {
+    font-size: xx-large;
+    text-align: center;
+}
+
+#projects {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.project-tile {
+    display: block;
+    height: fit-content;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 2rem;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, .5);
+}
+
+.project-tile span {
+    display: block;
+    border-top: 1px black solid;
+    padding-top: .5em;
+    width: 100%;
+    text-align: center;
+}
+
+.project-tile img {
+    width: 100%;
+    display: block;
+}
+
+#contact {
+    text-align: center;
+}
+
 @media (min-width: 640px) {
-    
+    #projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
